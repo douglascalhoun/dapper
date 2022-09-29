@@ -7,11 +7,14 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("yo");
-  await greeter.deployed();
-
-  console.log(`contract successfully deployed to ${greeter.address}`);
+  // const Greeter = await hre.ethers.getContractFactory("Greeter");
+  // const greeter = await Greeter.deploy("yo");
+  // await greeter.deployed();
+  
+  const Token = await hre.ethers.getContractFactory("Token");
+  const token = await Token.deploy("DugCoin", "DUGC");
+  
+  console.log(`contract successfully deployed to ${token.address}`);
   
 }
 
